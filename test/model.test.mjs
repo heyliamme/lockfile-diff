@@ -98,7 +98,7 @@ describe('finding a package in the lockfile', () => {
   const at = (file, name, version) => {
     const text = F(file);
     const i = c.findEntry(text, name, version);
-    return text.split('\n')[i];
+    return text.split(/\r?\n/)[i];
   };
   it('npm v3, including nested copies by version', () => {
     assert.equal(at('npm/v3/new.json', 'react', '18.2.0').trim(), '"node_modules/react": {');
