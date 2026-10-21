@@ -1,0 +1,17 @@
+{
+  "name": "lf-bun",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "cjs-sw": "npm:string-width@^4.2.3",
+    "escape-string-regexp": "4.0.0",
+    "is-number": "git+https://github.com/jonschlinkert/is-number.git#b0953635829711e7dceec0eaa92bc56521a546eb",
+    "is-plain-obj": "github:sindresorhus/is-plain-obj#v3.0.0",
+    "isarray": "2.0.5",
+    "ms": "2.1.2",
+    "picocolors": "^0.1.0"
+  },
+  "devDependencies": {
+    "left-pad": "1.2.0"
+  }
+}

@@ -1,0 +1,97 @@
+lockfileVersion: 5.3
+
+specifiers:
+  cjs-sw: npm:string-width@^5.1.2
+  escape-string-regexp: 5.0.0
+  is-number: https://registry.npmjs.org/is-number/-/is-number-7.0.0.tgz
+  is-plain-obj: github:sindresorhus/is-plain-obj#v4.1.0
+  kind-of: https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.3.tgz
+  left-pad: 1.3.0
+  ms: 2.1.3
+  picocolors: ^0.2.1
+  tiny-invariant: 1.3.3
+
+dependencies:
+  cjs-sw: /string-width/5.1.2
+  escape-string-regexp: 5.0.0
+  is-number: 7.0.0
+  is-plain-obj: github.com/sindresorhus/is-plain-obj/3b33a59bd31fdee17acebeb0f9e39b6eca007719
+  kind-of: '@registry.yarnpkg.com/kind-of/-/kind-of-6.0.3.tgz'
+  ms: 2.1.3
+  picocolors: 0.2.1
+  tiny-invariant: 1.3.3
+
+devDependencies:
+  left-pad: 1.3.0
+
+packages:
+
+  /ansi-regex/6.4.0:
+    resolution: {integrity: sha512-KzTVk2tCWAHtYrvvvaP8bJKJq2pVinhLcGEQdtLIYPbmNGNyYe8QwNaTUYQp2J7/vIsUKt5QCqAfUkYyG9DkOw==}
+    engines: {node: '>=12'}
+    dev: false
+
+  /eastasianwidth/0.2.0:
+    resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
+    dev: false
+
+  /emoji-regex/9.2.2:
+    resolution: {integrity: sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg==}
+    dev: false
+
+  /escape-string-regexp/5.0.0:
+    resolution: {integrity: sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw==}
+    engines: {node: '>=12'}
+    dev: false
+
+  /is-number/7.0.0:
+    resolution: {integrity: sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==}
+    engines: {node: '>=0.12.0'}
+    dev: false
+
+  /left-pad/1.3.0:
+    resolution: {integrity: sha512-XI5MPzVNApjAyhQzphX8BkmKsKUxD4LdyK24iZeQGinBN9yTQT3bFlCBy/aVx2HrNcqQGsdot8ghrjyrvMCoEA==}
+    deprecated: use String.prototype.padStart()
+    dev: true
+
+  /ms/2.1.3:
+    resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
+    dev: false
+
+  /picocolors/0.2.1:
+    resolution: {integrity: sha512-cMlDqaLEqfSaW8Z7N5Jw+lyIW869EzT73/F5lhtY9cLGoVxSXznfgfXMO0Z5K0o0Q2TkTXq+0KFsdnSe3jDViA==}
+    dev: false
+
+  /string-width/5.1.2:
+    resolution: {integrity: sha512-HnLOCR3vjcY8beoNLtcjZ5/nxn2afmME6lhrDrebokqMap+XbeW8n9TXpPDOqdGK5qcI3oT0GKTW6wC7EMiVqA==}
+    engines: {node: '>=12'}
+    dependencies:
+      eastasianwidth: 0.2.0
+      emoji-regex: 9.2.2
+      strip-ansi: 7.2.0
+    dev: false
+
+  /strip-ansi/7.2.0:
+    resolution: {integrity: sha512-yDPMNjp4WyfYBkHnjIRLfca1i6KMyGCtsVgoKe/z1+6vukgaENdgGBZt+ZmKPc4gavvEZ5OgHfHdrazhgNyG7w==}
+    engines: {node: '>=12'}
+    dependencies:
+      ansi-regex: 6.4.0
+    dev: false
+
+  /tiny-invariant/1.3.3:
+    resolution: {integrity: sha512-+FbBPE1o9QAYvviau/qC5SE3caw21q3xkvWKBtja5vgqOWIHHJ3ioaq1VPfn/Szqctz2bU/oYeKd9/z5BL+PVg==}
+    dev: false
+
+  '@registry.yarnpkg.com/kind-of/-/kind-of-6.0.3.tgz':
+    resolution: {tarball: https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.3.tgz}
+    name: kind-of
+    version: 6.0.3
+    engines: {node: '>=0.10.0'}
+    dev: false
+
+  github.com/sindresorhus/is-plain-obj/3b33a59bd31fdee17acebeb0f9e39b6eca007719:
+    resolution: {tarball: https://codeload.github.com/sindresorhus/is-plain-obj/tar.gz/3b33a59bd31fdee17acebeb0f9e39b6eca007719}
+    name: is-plain-obj
+    version: 4.1.0
+    engines: {node: '>=12'}
+    dev: false

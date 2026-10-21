@@ -1,0 +1,11 @@
+name: lf_dart
+publish_to: none
+environment:
+  sdk: ^3.5.0
+dependencies:
+  uuid: 3.0.7
+  js: ^0.6.7
+  path: 1.8.3
+  term_glyph: 1.2.1
+dev_dependencies:
+  lints: 2.1.1

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <rect x="8" y="8" width="240" height="240" rx="56" fill="#14201c"/>
+  <!-- shackle -->
+  <path d="M84 110V86a44 44 0 0 1 88 0v24" fill="none" stroke="#d9d2c3" stroke-width="18" stroke-linecap="round"/>
+  <!-- body: a short list of changes -->
+  <rect x="50" y="102" width="156" height="120" rx="24" fill="#f3eee4"/>
+  <g stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-width="9">
+    <!-- added -->
+    <path d="M78 130h20M88 120v20" stroke="#2a9d8f"/>
+    <!-- upgraded -->
+    <path d="M88 175v-22M78 162l10-10 10 10" stroke="#e39a2d"/>
+    <!-- removed -->
+    <path d="M78 198h20" stroke="#d9573f"/>
+  </g>
+  <g fill="#14201c">
+    <rect x="112" y="124" width="70" height="12" rx="6"/>
+    <rect x="112" y="157" width="52" height="12" rx="6"/>
+    <rect x="112" y="192" width="38" height="12" rx="6" opacity="0.35"/>
+  </g>
+</svg>

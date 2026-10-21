@@ -1,0 +1,13 @@
+{
+    "name": "lf/composer-demo",
+    "type": "project",
+    "require": {
+        "psr/log": "^3.0",
+        "brick/math": "^0.11",
+        "symfony/polyfill-ctype": "^1.28",
+        "psr/clock": "^1.0"
+    },
+    "require-dev": {
+        "psr/http-message": "^1.1"
+    }
+}

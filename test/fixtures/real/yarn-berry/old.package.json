@@ -1,0 +1,20 @@
+{
+  "name": "lf-berry-root",
+  "private": true,
+  "packageManager": "yarn@4.5.0",
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "cjs-sw": "npm:string-width@^4.2.3",
+    "escape-string-regexp": "4.0.0",
+    "isarray": "2.0.5",
+    "local-link": "link:./vendor/link-pkg",
+    "local-portal": "portal:./vendor/portal-pkg",
+    "ms": "2.1.2",
+    "picocolors": "^0.1.0"
+  },
+  "devDependencies": {
+    "left-pad": "1.2.0"
+  }
+}

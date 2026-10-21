@@ -1,0 +1,17 @@
+{
+  "name": "storefront",
+  "version": "1.4.0",
+  "private": true,
+  "dependencies": {
+    "react": "^18.2.0",
+    "lodash": "^4.17.21",
+    "chalk": "^4.1.2",
+    "send": "^0.19.0",
+    "zod": "^3.23.8",
+    "left-pad": "github:stevemao/left-pad"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "@types/node": "^20.12.7"
+  }
+}

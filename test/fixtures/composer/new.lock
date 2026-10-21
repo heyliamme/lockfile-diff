@@ -1,0 +1,156 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https:\/\/getcomposer.org\/doc\/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "0f9e8d7c6b5a49382716f5e4d3c2b1a0",
+    "packages": [
+        {
+            "name": "guzzlehttp\/guzzle",
+            "version": "7.9.2",
+            "source": {
+                "type": "git",
+                "url": "https:\/\/github.com\/guzzlehttp\/guzzle.git",
+                "reference": "d281ed313b989f213357e3be1a179f02196ac99b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https:\/\/api.github.com\/repos\/guzzlehttp\/guzzle\/zipball\/d281ed313b989f213357e3be1a179f02196ac99b",
+                "reference": "d281ed313b989f213357e3be1a179f02196ac99b",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2.5 || ^8.0"
+            },
+            "type": "library",
+            "license": [
+                "MIT"
+            ],
+            "description": "",
+            "time": "2024-03-01T10:00:00+00:00"
+        },
+        {
+            "name": "guzzlehttp\/promises",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https:\/\/github.com\/guzzlehttp\/promises.git",
+                "reference": "6ea8dd08867a2a42619d65c3deb2c0fcbf81c8f8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https:\/\/api.github.com\/repos\/guzzlehttp\/promises\/zipball\/6ea8dd08867a2a42619d65c3deb2c0fcbf81c8f8",
+                "reference": "6ea8dd08867a2a42619d65c3deb2c0fcbf81c8f8",
+                "shasum": ""
+            },
+            "require": {},
+            "type": "library",
+            "license": [
+                "MIT"
+            ],
+            "description": "",
+            "time": "2024-03-01T10:00:00+00:00"
+        },
+        {
+            "name": "monolog\/monolog",
+            "version": "3.7.0",
+            "source": {
+                "type": "git",
+                "url": "https:\/\/github.com\/monolog\/monolog.git",
+                "reference": "f4393b648b78a5408747de94fca38beb5f7e9ef8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https:\/\/api.github.com\/repos\/monolog\/monolog\/zipball\/f4393b648b78a5408747de94fca38beb5f7e9ef8",
+                "reference": "f4393b648b78a5408747de94fca38beb5f7e9ef8",
+                "shasum": ""
+            },
+            "require": {},
+            "type": "library",
+            "license": [
+                "MIT"
+            ],
+            "description": "",
+            "time": "2024-03-01T10:00:00+00:00"
+        },
+        {
+            "name": "acme\/internal-sdk",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https:\/\/github.com\/acme\/internal-sdk.git",
+                "reference": "9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https:\/\/api.github.com\/repos\/acme\/internal-sdk\/zipball\/9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b",
+                "reference": "9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b",
+                "shasum": ""
+            },
+            "require": {},
+            "type": "library",
+            "license": [
+                "MIT"
+            ],
+            "description": "",
+            "time": "2024-03-01T10:00:00+00:00"
+        },
+        {
+            "name": "psr\/log",
+            "version": "3.0.2",
+            "source": {
+                "type": "git",
+                "url": "https:\/\/github.com\/psr\/log.git",
+                "reference": "f16e1d5863e37f8d8c2a01719f5b34baa2b714d3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https:\/\/api.github.com\/repos\/psr\/log\/zipball\/f16e1d5863e37f8d8c2a01719f5b34baa2b714d3",
+                "reference": "f16e1d5863e37f8d8c2a01719f5b34baa2b714d3",
+                "shasum": ""
+            },
+            "require": {},
+            "type": "library",
+            "license": [
+                "MIT"
+            ],
+            "description": "",
+            "time": "2024-03-01T10:00:00+00:00"
+        }
+    ],
+    "packages-dev": [
+        {
+            "name": "phpunit\/phpunit",
+            "version": "11.3.6",
+            "source": {
+                "type": "git",
+                "url": "https:\/\/github.com\/phpunit\/phpunit.git",
+                "reference": "d62c45a19c665bb872c2a47023a0baf41a98bb2b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https:\/\/api.github.com\/repos\/phpunit\/phpunit\/zipball\/d62c45a19c665bb872c2a47023a0baf41a98bb2b",
+                "reference": "d62c45a19c665bb872c2a47023a0baf41a98bb2b",
+                "shasum": ""
+            },
+            "require": {},
+            "type": "library",
+            "license": [
+                "MIT"
+            ],
+            "description": "",
+            "time": "2024-03-01T10:00:00+00:00"
+        }
+    ],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {},
+    "prefer-stable": true,
+    "prefer-lowest": false,
+    "platform": {
+        "php": "^8.2"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "2.6.0"
+}

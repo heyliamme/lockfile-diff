@@ -1,0 +1,312 @@
+{
+  "name": "lockfile-diff",
+  "displayName": "Lockfile Diff",
+  "description": "See what a lockfile change actually does: packages added, removed, upgraded and downgraded, major/minor/patch, direct or transitive, declared ranges, and a lockfile's history. npm, Yarn, pnpm, Bun, pub, Poetry, uv, Cargo, Go, Composer and Bundler.",
+  "version": "0.1.0",
+  "publisher": "heyliam",
+  "license": "MIT",
+  "icon": "media/icon.png",
+  "galleryBanner": {
+    "color": "#14201c",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heyliamme/lockfile-diff"
+  },
+  "bugs": {
+    "url": "https://github.com/heyliamme/lockfile-diff/issues"
+  },
+  "homepage": "https://github.com/heyliamme/lockfile-diff#readme",
+  "qna": "https://github.com/heyliamme/lockfile-diff/issues",
+  "pricing": "Free",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Visualization",
+    "Other"
+  ],
+  "keywords": [
+    "lockfile",
+    "package-lock",
+    "yarn.lock",
+    "pnpm-lock",
+    "dependencies",
+    "dependency diff",
+    "diff",
+    "cargo.lock",
+    "go.sum",
+    "pubspec.lock",
+    "poetry.lock",
+    "semver"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onWebviewPanel:lockfileDiff"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": "limited",
+      "description": "In Restricted Mode, Git is not run, so comparisons against HEAD, branches or commits are unavailable. Comparing two lockfiles, or the two sides of an open diff editor, still works."
+    },
+    "virtualWorkspaces": {
+      "supported": "limited",
+      "description": "Comparisons that need Git are unavailable in virtual workspaces."
+    }
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "lockfileDiff.showChanges",
+        "title": "Show Dependency Changes",
+        "category": "Lockfile Diff",
+        "icon": "$(versions)"
+      },
+      {
+        "command": "lockfileDiff.showAllChanges",
+        "title": "Show All Dependency Changes",
+        "category": "Lockfile Diff",
+        "icon": "$(versions)"
+      },
+      {
+        "command": "lockfileDiff.compareWithRef",
+        "title": "Compare with Branch, Tag or Commit…",
+        "category": "Lockfile Diff"
+      },
+      {
+        "command": "lockfileDiff.compareRefs",
+        "title": "Compare Two Branches, Tags or Commits…",
+        "category": "Lockfile Diff"
+      },
+      {
+        "command": "lockfileDiff.compareFiles",
+        "title": "Compare Lockfiles",
+        "category": "Lockfile Diff"
+      },
+      {
+        "command": "lockfileDiff.showBranchChanges",
+        "title": "Show Dependency Changes on This Branch",
+        "category": "Lockfile Diff",
+        "icon": "$(git-pull-request)"
+      },
+      {
+        "command": "lockfileDiff.showHistory",
+        "title": "Show Lockfile History",
+        "category": "Lockfile Diff",
+        "icon": "$(history)"
+      },
+      {
+        "command": "lockfileDiff.historyMore",
+        "title": "Load Older Commits",
+        "category": "Lockfile Diff"
+      },
+      {
+        "command": "lockfileDiff.closeHistory",
+        "title": "Close Lockfile History",
+        "category": "Lockfile Diff",
+        "icon": "$(close)"
+      },
+      {
+        "command": "lockfileDiff.openHistoryCommit",
+        "title": "Show Dependency Changes of a Commit",
+        "category": "Lockfile Diff"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "lockfileDiff.compareFiles",
+          "when": "false"
+        },
+        {
+          "command": "lockfileDiff.historyMore",
+          "when": "false"
+        },
+        {
+          "command": "lockfileDiff.openHistoryCommit",
+          "when": "false"
+        },
+        {
+          "command": "lockfileDiff.closeHistory",
+          "when": "lockfileDiff.historyOpen"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "lockfileDiff.showChanges",
+          "when": "config.lockfileDiff.showTitleButton && resourceFilename =~ /^(package-lock\\.json|npm-shrinkwrap\\.json|yarn\\.lock|pnpm-lock\\.yaml|bun\\.lockb?|pubspec\\.lock|poetry\\.lock|uv\\.lock|Cargo\\.lock|go\\.sum|go\\.mod|composer\\.lock|Gemfile\\.lock|gems\\.locked)$/ && (isWorkspaceTrusted || isInDiffEditor)",
+          "group": "navigation@-9"
+        }
+      ],
+      "editor/title/context": [
+        {
+          "command": "lockfileDiff.showChanges",
+          "when": "resourceFilename =~ /^(package-lock\\.json|npm-shrinkwrap\\.json|yarn\\.lock|pnpm-lock\\.yaml|bun\\.lockb?|pubspec\\.lock|poetry\\.lock|uv\\.lock|Cargo\\.lock|go\\.sum|go\\.mod|composer\\.lock|Gemfile\\.lock|gems\\.locked)$/",
+          "group": "3_compare@20"
+        },
+        {
+          "command": "lockfileDiff.compareWithRef",
+          "when": "resourceFilename =~ /^(package-lock\\.json|npm-shrinkwrap\\.json|yarn\\.lock|pnpm-lock\\.yaml|bun\\.lockb?|pubspec\\.lock|poetry\\.lock|uv\\.lock|Cargo\\.lock|go\\.sum|go\\.mod|composer\\.lock|Gemfile\\.lock|gems\\.locked)$/ && resourceScheme == file && isWorkspaceTrusted",
+          "group": "3_compare@21"
+        },
+        {
+          "command": "lockfileDiff.showHistory",
+          "when": "resourceFilename =~ /^(package-lock\\.json|npm-shrinkwrap\\.json|yarn\\.lock|pnpm-lock\\.yaml|bun\\.lock|pubspec\\.lock|poetry\\.lock|uv\\.lock|Cargo\\.lock|go\\.sum|go\\.mod|composer\\.lock|Gemfile\\.lock|gems\\.locked)$/ && resourceScheme == file && isWorkspaceTrusted",
+          "group": "3_compare@22"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "lockfileDiff.showChanges",
+          "when": "!listMultiSelection && resourceFilename =~ /^(package-lock\\.json|npm-shrinkwrap\\.json|yarn\\.lock|pnpm-lock\\.yaml|bun\\.lockb?|pubspec\\.lock|poetry\\.lock|uv\\.lock|Cargo\\.lock|go\\.sum|go\\.mod|composer\\.lock|Gemfile\\.lock|gems\\.locked)$/ && isWorkspaceTrusted",
+          "group": "3_compare@40"
+        },
+        {
+          "command": "lockfileDiff.compareWithRef",
+          "when": "!listMultiSelection && resourceFilename =~ /^(package-lock\\.json|npm-shrinkwrap\\.json|yarn\\.lock|pnpm-lock\\.yaml|bun\\.lockb?|pubspec\\.lock|poetry\\.lock|uv\\.lock|Cargo\\.lock|go\\.sum|go\\.mod|composer\\.lock|Gemfile\\.lock|gems\\.locked)$/ && isWorkspaceTrusted",
+          "group": "3_compare@41"
+        },
+        {
+          "command": "lockfileDiff.compareFiles",
+          "when": "listMultiSelection && resourceFilename =~ /^(package-lock\\.json|npm-shrinkwrap\\.json|yarn\\.lock|pnpm-lock\\.yaml|bun\\.lockb?|pubspec\\.lock|poetry\\.lock|uv\\.lock|Cargo\\.lock|go\\.sum|go\\.mod|composer\\.lock|Gemfile\\.lock|gems\\.locked)$/",
+          "group": "3_compare@42"
+        },
+        {
+          "command": "lockfileDiff.showHistory",
+          "when": "!listMultiSelection && resourceFilename =~ /^(package-lock\\.json|npm-shrinkwrap\\.json|yarn\\.lock|pnpm-lock\\.yaml|bun\\.lock|pubspec\\.lock|poetry\\.lock|uv\\.lock|Cargo\\.lock|go\\.sum|go\\.mod|composer\\.lock|Gemfile\\.lock|gems\\.locked)$/ && isWorkspaceTrusted",
+          "group": "3_compare@43"
+        }
+      ],
+      "scm/title": [
+        {
+          "command": "lockfileDiff.showAllChanges",
+          "when": "scmProvider == git && config.lockfileDiff.showScmButton",
+          "group": "navigation@50"
+        },
+        {
+          "command": "lockfileDiff.compareWithRef",
+          "when": "scmProvider == git",
+          "group": "9_lockfileDiff@1"
+        },
+        {
+          "command": "lockfileDiff.compareRefs",
+          "when": "scmProvider == git",
+          "group": "9_lockfileDiff@2"
+        },
+        {
+          "command": "lockfileDiff.showBranchChanges",
+          "when": "scmProvider == git",
+          "group": "9_lockfileDiff@0"
+        },
+        {
+          "command": "lockfileDiff.showHistory",
+          "when": "scmProvider == git",
+          "group": "9_lockfileDiff@3"
+        }
+      ],
+      "scm/resourceState/context": [
+        {
+          "command": "lockfileDiff.showChanges",
+          "when": "scmProvider == git && resourceFilename =~ /^(package-lock\\.json|npm-shrinkwrap\\.json|yarn\\.lock|pnpm-lock\\.yaml|bun\\.lockb?|pubspec\\.lock|poetry\\.lock|uv\\.lock|Cargo\\.lock|go\\.sum|go\\.mod|composer\\.lock|Gemfile\\.lock|gems\\.locked)$/",
+          "group": "navigation@90"
+        }
+      ],
+      "view/title": [
+        {
+          "command": "lockfileDiff.showHistory",
+          "when": "view == lockfileDiff.history",
+          "group": "navigation@1"
+        },
+        {
+          "command": "lockfileDiff.closeHistory",
+          "when": "view == lockfileDiff.history",
+          "group": "navigation@2"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Lockfile Diff",
+      "properties": {
+        "lockfileDiff.defaultFilter": {
+          "type": "string",
+          "enum": [
+            "all",
+            "major",
+            "upgraded",
+            "added",
+            "removed"
+          ],
+          "enumDescriptions": [
+            "Every change",
+            "Major upgrades and downgrades",
+            "Upgrades only",
+            "Added packages only",
+            "Removed packages only"
+          ],
+          "default": "all",
+          "markdownDescription": "Which changes a new comparison shows first."
+        },
+        "lockfileDiff.directOnly": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "Start with only direct dependencies shown (where the lockfile or its manifest says which they are)."
+        },
+        "lockfileDiff.fromMergeBase": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "When the older side of a comparison is a branch, start where the newer side branched off it (the merge base, like `git diff main...feature`): the view shows what the branch changes, not what happened on `main` since. A button in the view switches to tip to tip."
+        },
+        "lockfileDiff.exclude": {
+          "type": "array",
+          "scope": "resource",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "markdownDescription": "Lockfiles to leave out of **Show All Dependency Changes** and comparisons between branches, as glob patterns relative to the repository root, such as `examples/**` or `**/fixtures/**`."
+        },
+        "lockfileDiff.showTitleButton": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "Show a button in the editor title bar of lockfiles and their diffs."
+        },
+        "lockfileDiff.showScmButton": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "Show a button in the Source Control title bar that opens every changed lockfile."
+        }
+      }
+    },
+    "views": {
+      "scm": [
+        {
+          "id": "lockfileDiff.history",
+          "name": "Lockfile History",
+          "when": "lockfileDiff.historyOpen && isWorkspaceTrusted",
+          "icon": "$(history)",
+          "contextualTitle": "Lockfile Diff"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "watch": "node scripts/build.mjs --watch",
+    "typecheck": "tsc --noEmit -p .",
+    "test": "node scripts/build.mjs && node --test test/*.test.mjs",
+    "package": "node scripts/build.mjs --prod && vsce package --no-dependencies",
+    "test:e2e": "npm run package && node test/e2e/run.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/vscode": "^1.90.0",
+    "@vscode/codicons": "^0.0.36",
+    "@vscode/vsce": "^4.0.0",
+    "esbuild": "^0.28.2",
+    "ovsx": "^1.3.0",
+    "smol-toml": "^1.9.1",
+    "typescript": "^7.0.2",
+    "yaml": "^2.9.1"
+  }
+}

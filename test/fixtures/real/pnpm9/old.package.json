@@ -1,0 +1,15 @@
+{
+  "name": "lf-pnpm9-root",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "cjs-sw": "npm:string-width@^4.2.3",
+    "escape-string-regexp": "4.0.0",
+    "isarray": "2.0.5",
+    "ms": "2.1.2",
+    "picocolors": "^0.1.0"
+  },
+  "devDependencies": {
+    "left-pad": "1.2.0"
+  }
+}

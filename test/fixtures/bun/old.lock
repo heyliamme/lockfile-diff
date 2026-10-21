@@ -1,0 +1,28 @@
+{
+  "lockfileVersion": 1,
+  "workspaces": {
+    "": {
+      "name": "bun-api",
+      "dependencies": {
+        "elysia": "^1.0.0",
+        "nanoid": "^5.0.6",
+      },
+      "devDependencies": {
+        "@types/bun": "latest",
+      },
+    },
+  },
+  "packages": {
+    "@sinclair/typebox": ["@sinclair/typebox@0.32.20", "", {}, "sha512-ziK497ILSIYMxD/thl496idIb03IZPlha6FxzhZ4YJsCJq+MqD03W7elrUu5BTSq5uqJs6CpBmc3vJq4sMxqJA=="],
+
+    "@types/bun": ["@types/bun@1.0.12", "", { "dependencies": { "bun-types": "1.0.33" } }, "sha512-lwIsZLeE5BpdnT+JqoXI/Mk/PI/c8ZvrS1fmRMXI6VC5iRNtFn2ROOzFFz7chs8pnEnjx87jPtPQOmuw6ln4TQ=="],
+
+    "bun-types": ["bun-types@1.0.33", "", {}, "sha512-L5tBIf9g6rBBkvshqysi5NoLQ9NnhSPU1pfJ9FzqoSfofYdyac3WLUnOIuQ+M5za/sooVUOP2ko+E6Tco0OLIA=="],
+
+    "elysia": ["elysia@1.0.9", "", { "dependencies": { "@sinclair/typebox": "0.32.20", "cookie": "^0.6.0" } }, "sha512-3P+2vg5SZgFfPRNRxL6gp6Sl1cmQ3U0DJUyqCHvdDhmshL2nKO5UkeF2J8bf12z9C1b9e+4GhlYn9tXtW1i7Lw=="],
+
+    "cookie": ["cookie@0.6.0", "", {}, "sha512-U71cyTamuh1CRNCfpGY6to28lxvNwPG4Guz/EVjgf3Jmzv0vlDp1atT9eS5dDjMYHucpHbWns6Lwf3BKz6svdw=="],
+
+    "nanoid": ["nanoid@5.0.6", "", { "bin": { "nanoid": "bin/nanoid.js" } }, "sha512-rRq0eMHoGZxlvaFOUdK1Ev83Bd1IgzzR+WJ3IbDJ7QOSdAxYjlurSPqFs9s4lJg29RT6nPwizFtJhQS6V5xgiA=="],
+  }
+}

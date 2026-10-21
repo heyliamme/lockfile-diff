@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "ledger"
+version = "0.3.0"
+description = ""
+authors = ["Ledger team"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Django = "^5.0"
+anyio = "^4.4"
+
+[tool.poetry.group.dev.dependencies]
+pytest = { version = "^8.2.0rc1", allow-prereleases = true }
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

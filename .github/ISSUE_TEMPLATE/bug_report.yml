@@ -1,0 +1,30 @@
+name: Bug report
+description: A wrong result, a lockfile that doesn't parse, or something that looks off
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what did you expect?
+    validations:
+      required: true
+  - type: input
+    id: lockfile
+    attributes:
+      label: Lockfile
+      description: Which file and format, for example "pnpm-lock.yaml, lockfileVersion 9.0" or "yarn.lock (Yarn 4)".
+    validations:
+      required: true
+  - type: textarea
+    id: input
+    attributes:
+      label: A small excerpt
+      description: The entries involved, before and after (redact private registry URLs or tokens). The "Copy as Markdown" output helps too.
+      render: text
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: OS, VS Code (or other editor) and the extension version
+    validations:
+      required: true

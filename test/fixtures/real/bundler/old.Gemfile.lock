@@ -1,0 +1,30 @@
+GIT
+  remote: https://github.com/ruby/abbrev
+  revision: 691bcf12eeca1e57d3ebdbbd3faf3838834c34ee
+  tag: v0.1.1
+  specs:
+    abbrev (0.1.1)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    base64 (0.1.2)
+    minitest (5.15.0)
+    ostruct (0.5.5)
+    rack (2.2.8)
+    rake (13.0.6)
+
+PLATFORMS
+  ruby
+  x86_64-linux
+
+DEPENDENCIES
+  abbrev!
+  base64 (~> 0.1.1)
+  minitest (= 5.15.0)
+  ostruct (= 0.5.5)
+  rack (= 2.2.8)
+  rake (= 13.0.6)
+
+BUNDLED WITH
+   2.5.22

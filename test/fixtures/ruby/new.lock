@@ -1,0 +1,48 @@
+GIT
+  remote: https://github.com/acme/feature_flags.git
+  revision: 7f6e5d4c3b2a1f0e9d8c7b6a5f4e3d2c1b0a9f8e
+  branch: main
+  specs:
+    feature_flags (0.4.0)
+      activesupport (>= 6.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    actionpack (7.1.3.4)
+      rack (>= 2.2.4)
+      rack-test (>= 0.6.3)
+    activesupport (7.1.3.4)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 1.6, < 2)
+    concurrent-ruby (1.3.4)
+    i18n (1.14.6)
+      concurrent-ruby (~> 1.0)
+    nokogiri (1.16.7-arm64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.16.7-x86_64-linux)
+      racc (~> 1.4)
+    pg (1.5.4)
+    puma (6.4.3)
+      nio4r (~> 2.0)
+    nio4r (2.7.3)
+    rack (3.1.7)
+    rack-test (2.1.0)
+      rack (>= 1.3)
+    racc (1.8.1)
+    rails-html-sanitizer (1.6.0)
+
+PLATFORMS
+  arm64-darwin-22
+  x86_64-linux
+
+DEPENDENCIES
+  actionpack (~> 7.1)
+  feature_flags!
+  nokogiri
+  pg (~> 1.5)
+  puma (~> 6.4)
+  rails-html-sanitizer
+
+BUNDLED WITH
+   2.5.16
