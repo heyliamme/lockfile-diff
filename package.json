@@ -2,7 +2,7 @@
   "name": "lockfile-diff",
   "displayName": "Lockfile Diff",
   "description": "See what a lockfile change actually does: packages added, removed, upgraded and downgraded, major/minor/patch, direct or transitive, declared ranges, and a lockfile's history. npm, Yarn, pnpm, Bun, pub, Poetry, uv, Cargo, Go, Composer and Bundler.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "heyliam",
   "license": "MIT",
   "icon": "media/icon.png",

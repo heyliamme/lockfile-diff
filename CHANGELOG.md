@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.1
+
+- A comparison no longer fails when the manifest next to the lockfile exists on only one
+  side (deleted or newly added). The dependency changes show as usual and the declared
+  ranges read as removed or new.
+
 ## 0.1.0
 
 First release.
