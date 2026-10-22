@@ -154,7 +154,7 @@ function withManifest(d: FileDiff, before: SideText, after: SideText, lock: Pars
   if (lock) {
     const missing: string[] = [];
     const outside: string[] = [];
-    const declared = readManifest(mf, after.siblings[mf])!;
+    const declared = mb ?? ma!;
     for (const r of ranges) {
       const dec = declared.get(r.name);
       if (!r.to || !dec?.registry) continue;
